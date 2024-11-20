@@ -1,0 +1,1200 @@
+{"abstracts-retrieval-response": {
+    "item": {
+        "ait:process-info": {
+            "ait:status": {
+                "@state": "update",
+                "@type": "core",
+                "@stage": "S300"
+            },
+            "ait:date-delivered": {
+                "@day": "07",
+                "@year": "2019",
+                "@timestamp": "2019-10-07T16:14:07.000007-04:00",
+                "@month": "10"
+            },
+            "ait:date-sort": {
+                "@day": "27",
+                "@year": "2018",
+                "@month": "12"
+            }
+        },
+        "xocs:meta": {"xocs:funding-list": {
+            "@pui-match": "primary",
+            "@has-funding-info": "1",
+            "xocs:funding-addon-generated-timestamp": "2019-02-20T21:18:25.275Z",
+            "xocs:funding-addon-type": "http://vtw.elsevier.com/data/voc/AddOnTypes/50.7/nlp"
+        }},
+        "bibrecord": {
+            "head": {
+                "author-group": [
+                    {
+                        "affiliation": {
+                            "country": "Thailand",
+                            "@afid": "60028190",
+                            "@country": "tha",
+                            "city": "Bangkok",
+                            "organization": [
+                                {"$": "Department of Computer Engineering"},
+                                {"$": "Faculty of Engineering"},
+                                {"$": "Chulalongkorn University"}
+                            ],
+                            "affiliation-id": {
+                                "@afid": "60028190",
+                                "@dptid": "113891981"
+                            },
+                            "@dptid": "113891981"
+                        },
+                        "author": [
+                            {
+                                "ce:given-name": "Kankawin",
+                                "preferred-name": {
+                                    "ce:given-name": "Kankawin",
+                                    "ce:initials": "K.",
+                                    "ce:surname": "Kowsrihawat",
+                                    "ce:indexed-name": "Kowsrihawat K."
+                                },
+                                "@seq": "1",
+                                "ce:initials": "K.",
+                                "@_fa": "true",
+                                "@type": "auth",
+                                "ce:surname": "Kowsrihawat",
+                                "@auid": "56938866500",
+                                "ce:indexed-name": "Kowsrihawat K."
+                            },
+                            {
+                                "ce:given-name": "Peerapon",
+                                "preferred-name": {
+                                    "ce:given-name": "Peerapon",
+                                    "ce:initials": "P.",
+                                    "ce:surname": "Vateekul",
+                                    "ce:indexed-name": "Vateekul P."
+                                },
+                                "@seq": "2",
+                                "ce:initials": "P.",
+                                "@_fa": "true",
+                                "@type": "auth",
+                                "ce:surname": "Vateekul",
+                                "@auid": "24829867400",
+                                "ce:indexed-name": "Vateekul P."
+                            }
+                        ]
+                    },
+                    {
+                        "affiliation": {
+                            "country": "Thailand",
+                            "@afid": "60011525",
+                            "@country": "tha",
+                            "city": "Pathumthani",
+                            "organization": [
+                                {"$": "Language and Semantic Technology Lab National Electronics and Computer"},
+                                {"$": "Technology Center (NECTEC)"}
+                            ],
+                            "affiliation-id": {"@afid": "60011525"}
+                        },
+                        "author": [{
+                            "ce:given-name": "Prachya",
+                            "preferred-name": {
+                                "ce:given-name": "Prachya",
+                                "ce:initials": "P.",
+                                "ce:surname": "Boonkwan",
+                                "ce:indexed-name": "Boonkwan P."
+                            },
+                            "@seq": "3",
+                            "ce:initials": "P.",
+                            "@_fa": "true",
+                            "@type": "auth",
+                            "ce:surname": "Boonkwan",
+                            "@auid": "36917795200",
+                            "ce:indexed-name": "Boonkwan P."
+                        }]
+                    }
+                ],
+                "citation-title": "Predicting judicial decisions of criminal cases from Thai supreme court using bi-directional gru with attention mechanism",
+                "abstracts": "© 2018 IEEE.Predicting court judgement has gained growing attention over the past years. Prior attempts used traditional prediction techniques based on Bag of words (BoW), where the order of words is discarded, resulting in low accuracy. In this paper, we propose a prediction model of criminal cases from Thai Supreme Court using End-To-End Deep Learning Neural Networks. Our model imitates a process of legal interpretation, whereby recurrent neural networks read the fact from an input case and compare them against relevant legal provisions with the attention mechanism. The model's output shows if a person is guilty of a crime according to the fact and laws. After the performance test, we find that our model could yield the higher F1 than traditional text classification techniques including Naive Bayes and SVM. In addition, we innovate the open dataset called 'Thai Supreme Court Cases (TSCC)' that was compiled from many decades of Thai Supreme Court criminal judgements. It features the text of fact expertly extracted from each judgement, textual provisions from Thai Criminal Code, and binary-format labels following the theoretical criminal law structure. This dataset is useful for achieving judgement predicting task together with emulating actual criminal case trial.",
+                "citation-info": {
+                    "author-keywords": {"author-keyword": [
+                        {
+                            "$": "Attention mechanism",
+                            "@xml:lang": "eng"
+                        },
+                        {
+                            "$": "Bi-directional GRU",
+                            "@xml:lang": "eng"
+                        },
+                        {
+                            "$": "criminal law",
+                            "@xml:lang": "eng"
+                        },
+                        {
+                            "$": "Deep Learning",
+                            "@xml:lang": "eng"
+                        },
+                        {
+                            "$": "predicting judgement",
+                            "@xml:lang": "eng"
+                        },
+                        {
+                            "$": "Thai Supreme Court",
+                            "@xml:lang": "eng"
+                        }
+                    ]},
+                    "citation-type": {"@code": "cp"},
+                    "citation-language": {
+                        "@language": "English",
+                        "@xml:lang": "eng"
+                    },
+                    "abstract-language": {
+                        "@language": "English",
+                        "@xml:lang": "eng"
+                    }
+                },
+                "source": {
+                    "website": {"ce:e-address": {
+                        "$": "http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8580229",
+                        "@type": "email"
+                    }},
+                    "translated-sourcetitle": {
+                        "$": "Proceedings of the 5th Asian Conference on Defence Technology, ACDT 2018",
+                        "@xml:lang": "eng"
+                    },
+                    "volisspag": {"pagerange": {
+                        "@first": "50",
+                        "@last": "55"
+                    }},
+                    "@type": "p",
+                    "isbn": {
+                        "@level": "volume",
+                        "$": "9781538676783",
+                        "@type": "electronic",
+                        "@length": "13"
+                    },
+                    "additional-srcinfo": {"conferenceinfo": {
+                        "confpublication": {"procpartno": "1 of 1"},
+                        "confevent": {
+                            "confname": "5th Asian Conference on Defence Technology, ACDT 2018",
+                            "confnumber": "5",
+                            "confcatnumber": "CFP18B32-ART",
+                            "confseriestitle": "Asian Conference on Defence Technology",
+                            "conflocation": {
+                                "venue": "Hanoi University of Science and Technology",
+                                "@country": "vnm",
+                                "city": "Hanoi"
+                            },
+                            "confcode": "144150",
+                            "confdate": {
+                                "enddate": {
+                                    "@day": "27",
+                                    "@year": "2018",
+                                    "@month": "10"
+                                },
+                                "startdate": {
+                                    "@day": "25",
+                                    "@year": "2018",
+                                    "@month": "10"
+                                }
+                            }
+                        }
+                    }},
+                    "sourcetitle": "Proceedings of the 5th Asian Conference on Defence Technology, ACDT 2018",
+                    "publicationdate": {
+                        "month": "12",
+                        "year": "2018",
+                        "date-text": {
+                            "@xfab-added": "true",
+                            "$": "27 December 2018"
+                        },
+                        "day": "27"
+                    },
+                    "sourcetitle-abbrev": "Proc. Asian Conf. Def. Technol., ACDT",
+                    "@country": "usa",
+                    "issuetitle": "Proceedings of the 5th Asian Conference on Defence Technology, ACDT 2018",
+                    "publicationyear": {"@first": "2018"},
+                    "publisher": {"publishername": "Institute of Electrical and Electronics Engineers Inc."},
+                    "article-number": "8592948",
+                    "@srcid": "21100898525"
+                },
+                "enhancement": {"classificationgroup": {"classifications": [
+                    {
+                        "@type": "ASJC",
+                        "classification": [
+                            {"$": "1801"},
+                            {"$": "1802"},
+                            {"$": "2202"},
+                            {"$": "2211"},
+                            {"$": "1702"}
+                        ]
+                    },
+                    {
+                        "@type": "CPXCLASS",
+                        "classification": [
+                            {
+                                "classification-code": "716.1",
+                                "classification-description": "Information and Communication Theory"
+                            },
+                            {
+                                "classification-code": "903.1",
+                                "classification-description": "Information Sources and Analysis"
+                            },
+                            {
+                                "classification-code": "971",
+                                "classification-description": "Social Sciences"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "FLXCLASS",
+                        "classification": {
+                            "classification-code": "902",
+                            "classification-description": "FLUIDEX; Related Topics"
+                        }
+                    },
+                    {
+                        "@type": "SUBJABBR",
+                        "classification": [
+                            {"$": "DECI"},
+                            {"$": "ENGI"},
+                            {"$": "COMP"}
+                        ]
+                    }
+                ]}}
+            },
+            "item-info": {
+                "copyright": {
+                    "$": "Copyright 2019 Elsevier B.V., All rights reserved.",
+                    "@type": "Elsevier"
+                },
+                "dbcollection": [
+                    {"$": "CPX"},
+                    {"$": "SCOPUS"},
+                    {"$": "Scopusbase"}
+                ],
+                "history": {"date-created": {
+                    "@day": "19",
+                    "@year": "2019",
+                    "@timestamp": "BST 05:16:10",
+                    "@month": "02"
+                }},
+                "itemidlist": {
+                    "itemid": [
+                        {
+                            "$": "626383523",
+                            "@idtype": "PUI"
+                        },
+                        {
+                            "$": "915724655",
+                            "@idtype": "CAR-ID"
+                        },
+                        {
+                            "$": "20190806514644",
+                            "@idtype": "CPX"
+                        },
+                        {
+                            "$": "85061529820",
+                            "@idtype": "SCP"
+                        },
+                        {
+                            "$": "85061529820",
+                            "@idtype": "SGR"
+                        }
+                    ],
+                    "ce:doi": "10.1109/ACDT.2018.8592948"
+                }
+            },
+            "tail": {"bibliography": {
+                "@refcount": "20",
+                "reference": [
+                    {
+                        "ref-fulltext": "N. Aletras, D. Tsarapatsanis, D. Preotiuc-Pietro, and V. Lampos, \"Predicting judicial decisions of the European Court of Human Rights: A Natural Language Processing perspective, \" PeerJ Computer Science, 2016.",
+                        "@id": "1",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2016"},
+                            "ref-title": {"ref-titletext": "Predicting judicial decisions of the european court of human rights: A natural language processing perspective"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85016265063",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "N.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Aletras",
+                                    "ce:indexed-name": "Aletras N."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "D.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Tsarapatsanis",
+                                    "ce:indexed-name": "Tsarapatsanis D."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "D.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Preotiuc-Pietro",
+                                    "ce:indexed-name": "Preotiuc-Pietro D."
+                                },
+                                {
+                                    "@seq": "4",
+                                    "ce:initials": "V.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Lampos",
+                                    "ce:indexed-name": "Lampos V."
+                                }
+                            ]},
+                            "ref-sourcetitle": "PeerJ Computer Science"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "D. M. Katz, M. J. Bommarito, and J. Blackman, \"A general approach for predicting the behavior of the Supreme Court of the United States, \" PLoS ONE, 2017.",
+                        "@id": "2",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2017"},
+                            "ref-title": {"ref-titletext": "A general approach for predicting the behavior of the supreme court of the nited states"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85017652700",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "D.M.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Katz",
+                                    "ce:indexed-name": "Katz D.M."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "M.J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Bommarito",
+                                    "ce:indexed-name": "Bommarito M.J."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Blackman",
+                                    "ce:indexed-name": "Blackman J."
+                                }
+                            ]},
+                            "ref-sourcetitle": "PLoS ONE"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "H. J. Spaeth, L. Epstein, A. D. Martin, J. A. Segal, T. J. Ruger, and S. C. Bennesh. Supreme Court Database [Online]. Available: http://scdb.wustl.edu",
+                        "@id": "3",
+                        "ref-info": {
+                            "ref-website": {"ce:e-address": {
+                                "$": "http://scdb.wustl.edu",
+                                "@type": "email"
+                            }},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "0347759679",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "[Online].",
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "H.J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Spaeth",
+                                    "ce:indexed-name": "Spaeth H.J."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "L.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Epstein",
+                                    "ce:indexed-name": "Epstein L."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "A.D.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Martin",
+                                    "ce:indexed-name": "Martin A.D."
+                                },
+                                {
+                                    "@seq": "4",
+                                    "ce:initials": "J.A.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Segal",
+                                    "ce:indexed-name": "Segal J.A."
+                                },
+                                {
+                                    "@seq": "5",
+                                    "ce:initials": "T.J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Ruger",
+                                    "ce:indexed-name": "Ruger T.J."
+                                },
+                                {
+                                    "@seq": "6",
+                                    "ce:initials": "S.C.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Bennesh",
+                                    "ce:indexed-name": "Bennesh S.C."
+                                }
+                            ]},
+                            "ref-sourcetitle": "Supreme Court Database"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "S. Thammaboosadee, B. Watanapa, J. H. Chan, and U. Silparcha, \"A Two-Stage Classifier That Identifies Charge and Punishment under Criminal Law of Civil Law System, \" IEICE TRANSACTIONS on Information and Systems, vol. E97-D, no. 4, pp. 864-875, 2014.",
+                        "@id": "4",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2014"},
+                            "ref-title": {"ref-titletext": "A Two-stage classifier that identifies charge and punishment under criminal law of civil law system"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84897398642",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {
+                                "voliss": {
+                                    "@volume": "97",
+                                    "@issue": "4"
+                                },
+                                "pagerange": {
+                                    "@first": "864",
+                                    "@last": "875"
+                                }
+                            },
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "S.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Thammaboosadee",
+                                    "ce:indexed-name": "Thammaboosadee S."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "B.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Watanapa",
+                                    "ce:indexed-name": "Watanapa B."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "J.H.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Chan",
+                                    "ce:indexed-name": "Chan J.H."
+                                },
+                                {
+                                    "@seq": "4",
+                                    "ce:initials": "U.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Silparcha",
+                                    "ce:indexed-name": "Silparcha U."
+                                }
+                            ]},
+                            "ref-sourcetitle": "IEICE TRANSACTIONS on Information and Systems"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "S. Thammaboosadee, \"An Elements-based Multi-Stage Charges Identification Model for Textual Criminal Cases, \" presented at the The Ninth International Conference on Digital Information Management (ICDIM 2014), Bangkok, Thailand, 2014.",
+                        "@id": "5",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2014"},
+                            "ref-title": {"ref-titletext": "An elements-based multi-stage charges identification model for textual criminal cases"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84930422740",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "Bangkok, Thailand",
+                            "ref-authors": {"author": [{
+                                "@seq": "1",
+                                "ce:initials": "S.",
+                                "@_fa": "true",
+                                "ce:surname": "Thammaboosadee",
+                                "ce:indexed-name": "Thammaboosadee S."
+                            }]},
+                            "ref-sourcetitle": "Ninth International Conference on Digital Information Management ICDIM 2014"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "Information Technology and Communication Center in Thai Supreme Court. Thai Supreme Court Judgement Search System [Online]. Available: http://deka.supremecourt.or.th/",
+                        "@id": "6",
+                        "ref-info": {
+                            "ref-website": {"ce:e-address": {
+                                "$": "http://deka.supremecourt.or.th/",
+                                "@type": "email"
+                            }},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85061551747",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "Thai Supreme Court Judgement Search System [Online].",
+                            "ref-sourcetitle": "Information Technology and Communication Center in Thai Supreme Court"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "\"Thai Criminal Code\", library.siam-legal.com. [Online]. Available: http://library.siam-legal.com/thai-criminal-code/.",
+                        "@id": "7",
+                        "ref-info": {
+                            "ref-website": {"ce:e-address": {
+                                "$": "http://library.siam-legal.com/thai-criminal-code/",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "Thai criminal code"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85061525200",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "[Online].",
+                            "ref-sourcetitle": "Library Siam-legal.com"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "K. Kowsrihawat and P. Vateekul, \"An information extraction framework for legal documents: A case study of Thai Supreme Court verdicts, \" in Proceedings of the 2015 12th International Joint Conference on Computer Science and Software Engineering, JCSSE 2015, 2015, pp. 275-280.",
+                        "@id": "8",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2015"},
+                            "ref-title": {"ref-titletext": "An information extraction framework for legal documents: A case study of Thai Supreme Court verdicts"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84945968413",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {"pagerange": {
+                                "@first": "275",
+                                "@last": "280"
+                            }},
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "K.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Kowsrihawat",
+                                    "ce:indexed-name": "Kowsrihawat K."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "P.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Vateekul",
+                                    "ce:indexed-name": "Vateekul P."
+                                }
+                            ]},
+                            "ref-sourcetitle": "Proceedings of the 2015 12th International Joint Conference on Computer Science and Software Engineering JCSSE 2015"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "K. Vachanasvasti, \"Element of crime structure\" in Criminal law part 1, Bangkok, Thailand. 2008. p. 86-584.",
+                        "@id": "9",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2008"},
+                            "ref-title": {"ref-titletext": "Element of crime structure"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85030838623",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {"pagerange": {
+                                "@first": "86",
+                                "@last": "584"
+                            }},
+                            "ref-text": "Bangkok, Thailand",
+                            "ref-authors": {"author": [{
+                                "@seq": "1",
+                                "ce:initials": "K.",
+                                "@_fa": "true",
+                                "ce:surname": "Vachanasvasti",
+                                "ce:indexed-name": "Vachanasvasti K."
+                            }]},
+                            "ref-sourcetitle": "Criminal Law Part 1"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "Y. Lecun, Y. Bengio, and G. Hinton, \"Deep Learning, \" Nature, vol. 521, no. 7553, pp. 436-444, 27 May, 2015 2015.",
+                        "@id": "10",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2015"},
+                            "ref-title": {"ref-titletext": "Deep learning"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84930630277",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {
+                                "voliss": {
+                                    "@volume": "521",
+                                    "@issue": "7553"
+                                },
+                                "pagerange": {
+                                    "@first": "436",
+                                    "@last": "444"
+                                }
+                            },
+                            "ref-text": "27 May 2015",
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "Y.",
+                                    "@_fa": "true",
+                                    "ce:surname": "LeCun",
+                                    "ce:indexed-name": "LeCun Y."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "Y.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Bengio",
+                                    "ce:indexed-name": "Bengio Y."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "G.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Hinton",
+                                    "ce:indexed-name": "Hinton G."
+                                }
+                            ]},
+                            "ref-sourcetitle": "Nature"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "J. Lu, J. Yang, D. Batra, and D. Parikh, \"Hierarchical question-image co-Attention for visual question answering, \" in Advances in Neural Information Processing Systems, 2016, pp. 289-297.",
+                        "@id": "11",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2016"},
+                            "ref-title": {"ref-titletext": "Hierarchical question-image co-Attention for visual question answering"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85018917850",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {"pagerange": {
+                                "@first": "289",
+                                "@last": "297"
+                            }},
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Lu",
+                                    "ce:indexed-name": "Lu J."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Yang",
+                                    "ce:indexed-name": "Yang J."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "D.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Batra",
+                                    "ce:indexed-name": "Batra D."
+                                },
+                                {
+                                    "@seq": "4",
+                                    "ce:initials": "D.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Parikh",
+                                    "ce:indexed-name": "Parikh D."
+                                }
+                            ]},
+                            "ref-sourcetitle": "Advances in Neural Information Processing Systems"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "D. Bahdanau, K. Cho, and Y. Bengio, \"Neural Machine Translation by Jointly Learning to Align and Translate, \" ArXiv e-prints, Accessed on: September 01, 2014. Available: https://ui.adsabs.harvard.edu/#abs/2014arXiv1409.0473B",
+                        "@id": "12",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2014"},
+                            "ref-website": {"ce:e-address": {
+                                "$": "https://ui.adsabs.harvard.edu/#abs/2014arXiv1409.0473B",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "Neural machine translation by jointly learning to align and translate"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84922389693",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "September 01",
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "D.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Bahdanau",
+                                    "ce:indexed-name": "Bahdanau D."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "K.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Cho",
+                                    "ce:indexed-name": "Cho K."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "Y.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Bengio",
+                                    "ce:indexed-name": "Bengio Y."
+                                }
+                            ]},
+                            "ref-sourcetitle": "ArXiv E-prints, Accessed on"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "K. Cho, et al. \"Learning phrase representations using RNN encoderdecoder for statistical machine translation, \" in Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2014, pp. 1724-1734.",
+                        "@id": "13",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2014"},
+                            "ref-title": {"ref-titletext": "Learning phrase representations using RNN encoderdecoder for statistical machine translation"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84961291190",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {"pagerange": {
+                                "@first": "1724",
+                                "@last": "1734"
+                            }},
+                            "ref-authors": {"author": [{
+                                "@seq": "1",
+                                "ce:initials": "K.",
+                                "@_fa": "true",
+                                "ce:surname": "Cho",
+                                "ce:indexed-name": "Cho K."
+                            }]},
+                            "ref-sourcetitle": "Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "S. Hochreiter and J. Schmidhuber, \"Long Short-Term Memory, \" Neural Computation, vol. 9, no. 8, pp. 1735-1780, 1997.",
+                        "@id": "14",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "1997"},
+                            "ref-title": {"ref-titletext": "Long Short-Term Memory"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "0031573117",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-volisspag": {
+                                "voliss": {
+                                    "@volume": "9",
+                                    "@issue": "8"
+                                },
+                                "pagerange": {
+                                    "@first": "1735",
+                                    "@last": "1780"
+                                }
+                            },
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "S.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Hochreiter",
+                                    "ce:indexed-name": "Hochreiter S."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Schmidhuber",
+                                    "ce:indexed-name": "Schmidhuber J."
+                                }
+                            ]},
+                            "ref-sourcetitle": "Neural Computation"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "J. Chung, C. Gulcehre, K. Cho, and Y. Bengio, \"Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling, \" ArXiv eprints, Accessed on: December 01, 2014 Available: https://ui.adsabs.harvard.edu/#abs/2014arXiv1412.3555C",
+                        "@id": "15",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2014"},
+                            "ref-website": {"ce:e-address": {
+                                "$": "https://ui.adsabs.harvard.edu/#abs/2014arXiv1412.3555C",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "Empirical evaluation of gated recurrent neural networks on sequence modeling"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "84939821078",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "Accessed on December 01",
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "J.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Chung",
+                                    "ce:indexed-name": "Chung J."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "C.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Gulcehre",
+                                    "ce:indexed-name": "Gulcehre C."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "K.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Cho",
+                                    "ce:indexed-name": "Cho K."
+                                },
+                                {
+                                    "@seq": "4",
+                                    "ce:initials": "Y.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Bengio",
+                                    "ce:indexed-name": "Bengio Y."
+                                }
+                            ]},
+                            "ref-sourcetitle": "ArXiv Eprints"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "C. Xiong, V. Zhong, and R. Socher, \"Dynamic Coattention Networks For Question Answering, \" ArXiv e-prints, Accessed on: November 01, 2016 Available: https://ui.adsabs.harvard.edu/#abs/2016arXiv161101604X",
+                        "@id": "16",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2016"},
+                            "ref-website": {"ce:e-address": {
+                                "$": "https://ui.adsabs.harvard.edu/#abs/2016arXiv161101604X",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "Dynamic coattention networks for question answering"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85031395928",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "Accessed on November 01",
+                            "ref-authors": {"author": [
+                                {
+                                    "@seq": "1",
+                                    "ce:initials": "C.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Xiong",
+                                    "ce:indexed-name": "Xiong C."
+                                },
+                                {
+                                    "@seq": "2",
+                                    "ce:initials": "V.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Zhong",
+                                    "ce:indexed-name": "Zhong V."
+                                },
+                                {
+                                    "@seq": "3",
+                                    "ce:initials": "R.",
+                                    "@_fa": "true",
+                                    "ce:surname": "Socher",
+                                    "ce:indexed-name": "Socher R."
+                                }
+                            ]},
+                            "ref-sourcetitle": "ArXiv E-prints"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "\"Thai Lexeme Tokenizer: LexTo\", National Electronics and Computer Technology Center (NECTEC). [Online]. Available: http://www.sansarn.com/lexto/",
+                        "@id": "17",
+                        "ref-info": {
+                            "ref-website": {"ce:e-address": {
+                                "$": "http://www.sansarn.com/lexto/",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "Thai lexeme tokenizer: Lexto"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85061543057",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "[Online].",
+                            "ref-sourcetitle": "National Electronics and Computer Technology Center (NECTEC)"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "Thai Royal Society, \"Thai Legal Words Dictionary, Thai Royal Society version, \" 4 ed. Bangkok, Thailand. 2013.",
+                        "@id": "18",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2013"},
+                            "ref-title": {"ref-titletext": "Thai royal society"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85061536816",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "Thai Royal Society version 4 ed. Bangkok, Thailand",
+                            "ref-sourcetitle": "Thai Legal Words Dictionary"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "Z. Lin et al., \"A Structured Self-Attentive Sentence Embedding, \" ArXiv e-prints, Accessed on: March 01, 2017 Available: https://ui.adsabs.harvard.edu/#abs/2017arXiv170303130L",
+                        "@id": "19",
+                        "ref-info": {
+                            "ref-publicationyear": {"@first": "2017"},
+                            "ref-website": {"ce:e-address": {
+                                "$": "https://ui.adsabs.harvard.edu/#abs/2017arXiv170303130L",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "A Structured self-Attentive sentence embedding"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85037335190",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "Accessed on March 01",
+                            "ref-authors": {"author": [{
+                                "@seq": "1",
+                                "ce:initials": "Z.",
+                                "@_fa": "true",
+                                "ce:surname": "Lin",
+                                "ce:indexed-name": "Lin Z."
+                            }]},
+                            "ref-sourcetitle": "ArXiv E-prints"
+                        }
+                    },
+                    {
+                        "ref-fulltext": "Office of the Council of State. \"Thai Criminal Code\" [Online]. Available: http://web.krisdika.go.th/data/law/law4/%bb06/%bb06-20-9999-update.pdf",
+                        "@id": "20",
+                        "ref-info": {
+                            "ref-website": {"ce:e-address": {
+                                "$": "http://web.krisdika.go.th/data/law/law4/%bb06/%bb06-20-9999-update.pdf",
+                                "@type": "email"
+                            }},
+                            "ref-title": {"ref-titletext": "Office of the council of state"},
+                            "refd-itemidlist": {"itemid": {
+                                "$": "85061553664",
+                                "@idtype": "SGR"
+                            }},
+                            "ref-text": "[Online]",
+                            "ref-sourcetitle": "Thai Criminal Code"
+                        }
+                    }
+                ]
+            }}
+        }
+    },
+    "affiliation": [
+        {
+            "affiliation-city": "Bangkok",
+            "@id": "60028190",
+            "affilname": "Chulalongkorn University",
+            "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60028190",
+            "affiliation-country": "Thailand"
+        },
+        {
+            "affiliation-city": "Pathum Thani",
+            "@id": "60011525",
+            "affilname": "Thailand National Electronics and Computer Technology Center",
+            "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60011525",
+            "affiliation-country": "Thailand"
+        }
+    ],
+    "coredata": {
+        "srctype": "p",
+        "eid": "2-s2.0-85061529820",
+        "dc:description": "Predicting court judgement has gained growing attention over the past years. Prior attempts used traditional prediction techniques based on Bag of words (BoW), where the order of words is discarded, resulting in low accuracy. In this paper, we propose a prediction model of criminal cases from Thai Supreme Court using End-To-End Deep Learning Neural Networks. Our model imitates a process of legal interpretation, whereby recurrent neural networks read the fact from an input case and compare them against relevant legal provisions with the attention mechanism. The model's output shows if a person is guilty of a crime according to the fact and laws. After the performance test, we find that our model could yield the higher F1 than traditional text classification techniques including Naive Bayes and SVM. In addition, we innovate the open dataset called 'Thai Supreme Court Cases (TSCC)' that was compiled from many decades of Thai Supreme Court criminal judgements. It features the text of fact expertly extracted from each judgement, textual provisions from Thai Criminal Code, and binary-format labels following the theoretical criminal law structure. This dataset is useful for achieving judgement predicting task together with emulating actual criminal case trial.",
+        "prism:coverDate": "2018-12-27",
+        "prism:aggregationType": "Conference Proceeding",
+        "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85061529820",
+        "dc:creator": {"author": [{
+            "ce:given-name": "Kankawin",
+            "preferred-name": {
+                "ce:given-name": "Kankawin",
+                "ce:initials": "K.",
+                "ce:surname": "Kowsrihawat",
+                "ce:indexed-name": "Kowsrihawat K."
+            },
+            "@seq": "1",
+            "ce:initials": "K.",
+            "@_fa": "true",
+            "affiliation": {
+                "@id": "60028190",
+                "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60028190"
+            },
+            "ce:surname": "Kowsrihawat",
+            "@auid": "56938866500",
+            "author-url": "https://api.elsevier.com/content/author/author_id/56938866500",
+            "ce:indexed-name": "Kowsrihawat K."
+        }]},
+        "link": [
+            {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85061529820"
+            },
+            {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85061529820&origin=inward"
+            },
+            {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85061529820&origin=inward"
+            }
+        ],
+        "prism:isbn": "9781538676783",
+        "source-id": "21100898525",
+        "citedby-count": "24",
+        "subtype": "cp",
+        "dc:title": "Predicting judicial decisions of criminal cases from Thai supreme court using bi-directional gru with attention mechanism",
+        "openaccess": "0",
+        "publishercopyright": "© 2018 IEEE.",
+        "article-number": "8592948",
+        "subtypeDescription": "Conference Paper",
+        "prism:publicationName": "Proceedings of the 5th Asian Conference on Defence Technology, ACDT 2018",
+        "prism:pageRange": "50-55",
+        "prism:endingPage": "55",
+        "openaccessFlag": "false",
+        "prism:doi": "10.1109/ACDT.2018.8592948",
+        "prism:startingPage": "50",
+        "dc:identifier": "SCOPUS_ID:85061529820",
+        "dc:publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    "idxterms": {"mainterm": [
+        {
+            "$": "Attention mechanisms",
+            "@weight": "b",
+            "@candidate": "n"
+        },
+        {
+            "$": "Bi-directional",
+            "@weight": "b",
+            "@candidate": "n"
+        },
+        {
+            "$": "Criminal laws",
+            "@weight": "b",
+            "@candidate": "n"
+        },
+        {
+            "$": "predicting judgement",
+            "@weight": "b",
+            "@candidate": "n"
+        },
+        {
+            "$": "Supreme Court",
+            "@weight": "b",
+            "@candidate": "n"
+        }
+    ]},
+    "language": {"@xml:lang": "eng"},
+    "authkeywords": {"author-keyword": [
+        {
+            "@_fa": "true",
+            "$": "Attention mechanism"
+        },
+        {
+            "@_fa": "true",
+            "$": "Bi-directional GRU"
+        },
+        {
+            "@_fa": "true",
+            "$": "criminal law"
+        },
+        {
+            "@_fa": "true",
+            "$": "Deep Learning"
+        },
+        {
+            "@_fa": "true",
+            "$": "predicting judgement"
+        },
+        {
+            "@_fa": "true",
+            "$": "Thai Supreme Court"
+        }
+    ]},
+    "subject-areas": {"subject-area": [
+        {
+            "@_fa": "true",
+            "$": "Decision Sciences (miscellaneous)",
+            "@code": "1801",
+            "@abbrev": "DECI"
+        },
+        {
+            "@_fa": "true",
+            "$": "Information Systems and Management",
+            "@code": "1802",
+            "@abbrev": "DECI"
+        },
+        {
+            "@_fa": "true",
+            "$": "Aerospace Engineering",
+            "@code": "2202",
+            "@abbrev": "ENGI"
+        },
+        {
+            "@_fa": "true",
+            "$": "Mechanics of Materials",
+            "@code": "2211",
+            "@abbrev": "ENGI"
+        },
+        {
+            "@_fa": "true",
+            "$": "Artificial Intelligence",
+            "@code": "1702",
+            "@abbrev": "COMP"
+        }
+    ]},
+    "authors": {"author": [
+        {
+            "ce:given-name": "Kankawin",
+            "preferred-name": {
+                "ce:given-name": "Kankawin",
+                "ce:initials": "K.",
+                "ce:surname": "Kowsrihawat",
+                "ce:indexed-name": "Kowsrihawat K."
+            },
+            "@seq": "1",
+            "ce:initials": "K.",
+            "@_fa": "true",
+            "affiliation": {
+                "@id": "60028190",
+                "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60028190"
+            },
+            "ce:surname": "Kowsrihawat",
+            "@auid": "56938866500",
+            "author-url": "https://api.elsevier.com/content/author/author_id/56938866500",
+            "ce:indexed-name": "Kowsrihawat K."
+        },
+        {
+            "ce:given-name": "Peerapon",
+            "preferred-name": {
+                "ce:given-name": "Peerapon",
+                "ce:initials": "P.",
+                "ce:surname": "Vateekul",
+                "ce:indexed-name": "Vateekul P."
+            },
+            "@seq": "2",
+            "ce:initials": "P.",
+            "@_fa": "true",
+            "affiliation": {
+                "@id": "60028190",
+                "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60028190"
+            },
+            "ce:surname": "Vateekul",
+            "@auid": "24829867400",
+            "author-url": "https://api.elsevier.com/content/author/author_id/24829867400",
+            "ce:indexed-name": "Vateekul P."
+        },
+        {
+            "ce:given-name": "Prachya",
+            "preferred-name": {
+                "ce:given-name": "Prachya",
+                "ce:initials": "P.",
+                "ce:surname": "Boonkwan",
+                "ce:indexed-name": "Boonkwan P."
+            },
+            "@seq": "3",
+            "ce:initials": "P.",
+            "@_fa": "true",
+            "affiliation": {
+                "@id": "60011525",
+                "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60011525"
+            },
+            "ce:surname": "Boonkwan",
+            "@auid": "36917795200",
+            "author-url": "https://api.elsevier.com/content/author/author_id/36917795200",
+            "ce:indexed-name": "Boonkwan P."
+        }
+    ]}
+}}
