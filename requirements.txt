@@ -1,1 +1,7 @@
-plotly==5.24.1
+streamlit
+pandas
+numpy
+plotly
+scipy
+scikit-learn
+streamlit-plotly-events
