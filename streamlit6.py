@@ -117,12 +117,6 @@ fig.update_traces(hovertemplate="<b>%{customdata[0]}</b><extra></extra>", custom
 
 selected_points = plotly_events(fig)
 
-# Nearest neighbors calculation
-def get_nearest_neighbors(selected_point, points, k=5):
-    tree = KDTree(points)
-    _, indices = tree.query(selected_point, k=k)
-    return indices
-
 def get_paper(index, df):
     return df.iloc[int(index)]
 
@@ -225,7 +219,7 @@ if selected_points:  # Check if any point is selected
     # TF-IDF Vectorization
     s_data2 = data2[data2[selected_subject] == 1]
     tfidf_vectorizer = TfidfVectorizer(stop_words='english')
-    X_tfidf = tfidf_vectorizer.fit_transform(s_data2["title"])
+    X_tfidf = tfidf_vectorizer.fit_transform(s_data2["title_keywords"])
 
     # Calculate TF-IDF nearest neighbors
     tfidf_knn = NearestNeighbors(n_neighbors=n_neighbors + 1, algorithm='brute', metric='cosine')
@@ -241,11 +235,11 @@ if selected_points:  # Check if any point is selected
 
     # Display recommended papers based on TF-IDF
     for i, index in enumerate(filtered_indices_tfidf[:n_neighbors]):  # Limit to `n_neighbors`
-        rec_paper = get_paper(index, s_data)
+        rec_paper = get_paper(index, s_data2)
         citedcount2.append(rec_paper['cited_by_count'])
         recpaperlist2.append("Recommend# "+ str(i+1))
         with st.expander(f"🎄 Recommend #{i+1}: {rec_paper['title']}"):
-            if rec_paper['keywords']:
+            if rec_paper['keywords'] & type(rec_paper['keywords']) == str:
                 cleaned_kw = rec_paper['keywords'].replace(";", ", ")
                 st.write(f"🎁 Keywords: {cleaned_kw}")
             st.write(f"⛄ Distance from selected paper: {filtered_distances_tfidf[i]:.4f}")
