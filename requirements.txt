@@ -5,3 +5,4 @@ plotly
 scipy
 scikit-learn
 streamlit-plotly-events
+pickle4
