@@ -55,7 +55,7 @@ subject_data["Title"] = titles  # Add titles for hover information
 
 # Create hover text with line breaks
 subject_data["hover_text"] = subject_data["Title"].apply(
-    lambda x: "<br>".join([x[i:i+80] for i in range(0, len(x), 80)])  # Break lines every 30 characters
+    lambda x: "<br>".join([x[i:i+35] for i in range(0, len(x), 35)])  # Break lines every 30 characters
 )
 
 # Plotly scatter plot
