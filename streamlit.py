@@ -65,7 +65,10 @@ st.markdown("""
 def load_data(filename):
     return pd.read_csv(filename)
 
-data = load_data("outnow.csv")
+data = load_data("outnow.csv").drop(columns=["Unnamed: 0"])
+data2 = load_data("outnow_2.csv").drop(columns=["Unnamed: 0"])
+print(data.info())
+print(data2.info())
 affils = load_data("DATA_CSV/affils.csv")
 affirelations = load_data("DATA_CSV/affi_relation.csv")
 
@@ -226,8 +229,9 @@ if selected_points:  # Check if any point is selected
 
 
     # TF-IDF Vectorization
+    s_data2 = data2[data2[selected_subject] == 1]
     tfidf_vectorizer = TfidfVectorizer(stop_words='english')
-    X_tfidf = tfidf_vectorizer.fit_transform(s_data["title"])
+    X_tfidf = tfidf_vectorizer.fit_transform(s_data2["title"])
 
     # Calculate TF-IDF nearest neighbors
     tfidf_knn = NearestNeighbors(n_neighbors=n_neighbors + 1, algorithm='brute', metric='cosine')
@@ -247,8 +251,9 @@ if selected_points:  # Check if any point is selected
         citedcount2.append(rec_paper['cited_by_count'])
         recpaperlist2.append("Recommend# "+ str(i+1))
         with st.expander(f"🎄 Recommend #{i+1}: {rec_paper['title']}"):
-            cleaned_kw = rec_paper['keywords'].replace(";", ", ")
-            st.write(f"🎁 Keywords: {cleaned_kw}")
+            if rec_paper['keywords']:
+                cleaned_kw = rec_paper['keywords'].replace(";", ", ")
+                st.write(f"🎁 Keywords: {cleaned_kw}")
             st.write(f"⛄ Distance from selected paper: {filtered_distances_tfidf[i]:.4f}")
             st.write(f"🎊 Cited by count: {int(rec_paper['cited_by_count'])}")
             selectedaffilist = []
