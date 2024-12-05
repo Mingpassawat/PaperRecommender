@@ -92,6 +92,7 @@ if selected_points:
         with st.expander(f"Recommend #{i}: {rec_paper['title']}"):
             cleaned_kw = rec_paper['keywords'].replace(";", ", ")
             st.write(f"Keywords: {cleaned_kw}")
+            st.write(f'Distance from selected paper: {distances[0][i-1]}')
 
 else:
     st.write("Please select a paper")
