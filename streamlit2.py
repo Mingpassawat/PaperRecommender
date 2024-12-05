@@ -21,6 +21,7 @@ def load_data(filename):
 
 data = load_data("outnow.csv")
 
+
 # Load tfidf model
 with open('models/tfidf.model', 'rb') as file:
     tfidf = pickle.load(file)
