@@ -13,7 +13,7 @@ scaler = StandardScaler()
 
 n_neighbors = 5
 
-# Christmas Theme CSS
+#Christmas Theme CSS
 st.markdown(
     """
     <style>
@@ -40,16 +40,25 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-background_style = """
-<style>
-body {
-    background-color: #D2B48C; /* Light Brown Color (Tan) */
-}
-</style>
-"""
+st.markdown("""
+    <style>
+        .stApp {
+            background-color: #D2B48C;
+            background-size: cover;
+        }
+        [data-testid="stSidebar"] {
+            background-color: #FFF5E1;
+            padding: 20px;
+            font-family: 'Arial';
+        }
+        [data-testid="stSidebar"] h1 {
+            color: #1E90FF;
 
-# Apply the style
-st.markdown(background_style, unsafe_allow_html=True)
+    </style>
+    """, unsafe_allow_html=True)
+
+
+
 
 # Load dataset
 @st.cache_data
@@ -260,3 +269,5 @@ if selected_points:  # Check if any point is selected
     st.plotly_chart(fig)
 else:
     st.write("Please select a paper")
+    
+st.markdown("<div class='footer'>Happy Holidays and Happy Learning! 🎄🎓</div>", unsafe_allow_html=True)
