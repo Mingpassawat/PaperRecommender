@@ -7,12 +7,49 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from streamlit_plotly_events import plotly_events
 from sklearn.neighbors import NearestNeighbors
-from sklearn.preprocessing import StandardScaler
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 scaler = StandardScaler()
 
 n_neighbors = 5
+
+# Christmas Theme CSS
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #D2B48C;
+        background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+    }
+    .main-title {
+        color: #d72638;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+    }
+    .header, .expander-header {
+        color: #006400;
+    }
+    .footer {
+        color: #2e8b57;
+        font-size: small;
+        text-align: center;
+        margin-top: 50px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+background_style = """
+<style>
+body {
+    background-color: #D2B48C; /* Light Brown Color (Tan) */
+}
+</style>
+"""
+
+# Apply the style
+st.markdown(background_style, unsafe_allow_html=True)
 
 # Load dataset
 @st.cache_data
@@ -20,6 +57,8 @@ def load_data(filename):
     return pd.read_csv(filename)
 
 data = load_data("outnow.csv")
+affils = load_data("DATA_CSV/affils.csv")
+affirelations = load_data("DATA_CSV/affi_relation.csv")
 
 # Load tfidf model
 with open('models/tfidf.model', 'rb') as file:
@@ -31,10 +70,15 @@ scaler = StandardScaler()
 
 # Sidebar selection
 subject_list = subjects
-selected_subject = st.sidebar.selectbox("Select a subject:", subject_list)
+selected_subject = st.sidebar.selectbox("🎁 Select a subject:", subject_list)
 
-# Title
-st.title("Paper Recommendation System")
+# # Title
+# st.title("Paper Recommendation System")
+
+# Title with Christmas Cheer
+st.markdown("<h1 class='main-title'>🎄 Paper Recommendation System 🎅</h1>", unsafe_allow_html=True)
+st.markdown("<h2 class='header'>Bringing you academic gifts this holiday season! 🎁</h2>", unsafe_allow_html=True)
+
 st.header("Using KNN + Word2Vec")
 
 
@@ -54,7 +98,7 @@ subject_data["Title"] = titles  # Add titles for hover information
 
 # Create hover text with line breaks
 subject_data["hover_text"] = subject_data["Title"].apply(
-    lambda x: "<br>".join([x[i:i+80] for i in range(0, len(x), 80)])  # Break lines every 30 characters
+    lambda x: "<br>".join([x[i:i+50] for i in range(0, len(x), 50)])  # Break lines every 30 characters
 )
 
 # Plotly scatter plot
@@ -64,6 +108,7 @@ fig = px.scatter(
     y="PCA2",
     title=f"{selected_subject} Data",
     hover_name="hover_text",  # Use the hover_text column directly
+    color_discrete_sequence=["#d72638", "#88d498", "#ffcc00"]
 )
 fig.update_traces(hovertemplate="<b>%{customdata[0]}</b><extra></extra>", customdata=subject_data[["hover_text"]])
 
@@ -81,6 +126,9 @@ def get_paper(index, df):
 # Placeholder for click-based interaction
 st.write(f'Total sample: {subject_data.shape[0]}')
 
+recpaperlist1 =[]
+citedcount1 = []
+
 # Selected point expander
 if selected_points:  # Check if any point is selected
     # Get the selected paper
@@ -88,9 +136,18 @@ if selected_points:  # Check if any point is selected
     selected_paper = get_paper(selected_index, s_data)
 
     # Display selected paper information
-    with st.expander(f"Selected paper title: {selected_paper['title']}"):
+    with st.expander(f"🎅 Selected paper title: {selected_paper['title']}"):
         cleaned_kw = selected_paper['keywords'].replace(";", ", ")
-        st.write(f"Keywords: {cleaned_kw}")
+        st.write(f"🎄 Keywords: {cleaned_kw}")
+        selectedaffilist = []
+        affi_id = selected_paper["affiliation_id"]
+        uninumberdf = affirelations[affirelations["id"] == affi_id]
+        for value in uninumberdf["affi"]:
+            selectedaffilist.append(value)
+        st.write("🦌 Affilated with: ")
+        for i in selectedaffilist:
+            st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+
 
     # Calculate recommendations using nearest neighbors
     knn = NearestNeighbors(n_neighbors=n_neighbors + 1, algorithm='brute', metric='cosine')  # Add 1 to account for the selected paper
@@ -107,23 +164,57 @@ if selected_points:  # Check if any point is selected
     # Display recommended papers
     for i, index in enumerate(filtered_indices[:n_neighbors]):  # Limit to `n_neighbors`
         rec_paper = get_paper(index, s_data)
-        with st.expander(f"Recommend #{i+1}: {rec_paper['title']}"):
+        citedcount1.append(rec_paper['cited_by_count'])
+        recpaperlist1.append("Recommend# "+ str(i+1))
+        with st.expander(f"🎄 Recommend #{i+1}: {rec_paper['title']}"):
             cleaned_kw = rec_paper['keywords'].replace(";", ", ")
-            st.write(f"Keywords: {cleaned_kw}")
-            st.write(f"Distance from selected paper: {filtered_distances[i]}")
+            st.write(f"🎁 Keywords: {cleaned_kw}")
+            st.write(f"⛄ Distance from selected paper: {filtered_distances[i]}")
+            st.write(f"🎊 Cited by count: {int(rec_paper['cited_by_count'])}")
+            selectedaffilist = []
+            affi_id = rec_paper["affiliation_id"]
+            uninumberdf = affirelations[affirelations["id"] == affi_id]
+            for value in uninumberdf["affi"]:
+                selectedaffilist.append(value)
+            st.write("🦌 Affilated with: ")
+            for i in selectedaffilist:
+                st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+
+    data1 ={
+    "Recommended Paper": recpaperlist1,
+    "Cited by Count" : citedcount1
+    }
+    df = pd.DataFrame(data1)
+    fig = px.bar(df, x="Recommended Paper", y="Cited by Count", title="Cited by Count of Recommended Papers")
+    st.plotly_chart(fig)   
 else:
     st.write("Please select a paper")
 
+
+
+
 st.header("Using KNN + TF-IDF")
+
+recpaperlist2 =[]
+citedcount2 = []
 
 if selected_points:  # Check if any point is selected
     # Retrieve the selected paper's index and information
     selected_index = selected_points[0]['pointIndex']
     selected_paper = get_paper(selected_index, s_data)
 
-    with st.expander(f"Selected paper title: {selected_paper['title']}"):
+    with st.expander(f"🎅 Selected paper title: {selected_paper['title']}"):
         cleaned_kw = selected_paper['keywords'].replace(";", ", ")
-        st.write(f"Keywords: {cleaned_kw}")
+        st.write(f"🎄 Keywords: {cleaned_kw}")
+        selectedaffilist = []
+        affi_id = selected_paper["affiliation_id"]
+        uninumberdf = affirelations[affirelations["id"] == affi_id]
+        for value in uninumberdf["affi"]:
+            selectedaffilist.append(value)
+        st.write("🦌 Affilated with: ")
+        for i in selectedaffilist:
+            st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+
 
     # TF-IDF Vectorization
     tfidf_vectorizer = TfidfVectorizer(stop_words='english')
@@ -144,11 +235,28 @@ if selected_points:  # Check if any point is selected
     # Display recommended papers based on TF-IDF
     for i, index in enumerate(filtered_indices_tfidf[:n_neighbors]):  # Limit to `n_neighbors`
         rec_paper = get_paper(index, s_data)
-        with st.expander(f"Recommend #{i+1}: {rec_paper['title']}"):
+        citedcount2.append(rec_paper['cited_by_count'])
+        recpaperlist2.append("Recommend# "+ str(i+1))
+        with st.expander(f"🎄 Recommend #{i+1}: {rec_paper['title']}"):
             cleaned_kw = rec_paper['keywords'].replace(";", ", ")
-            st.write(f"Keywords: {cleaned_kw}")
-            st.write(f"Distance from selected paper: {filtered_distances_tfidf[i]:.4f}")
+            st.write(f"🎁 Keywords: {cleaned_kw}")
+            st.write(f"⛄ Distance from selected paper: {filtered_distances_tfidf[i]:.4f}")
+            st.write(f"🎊 Cited by count: {int(rec_paper['cited_by_count'])}")
+            selectedaffilist = []
+            affi_id = rec_paper["affiliation_id"]
+            uninumberdf = affirelations[affirelations["id"] == affi_id]
+            for value in uninumberdf["affi"]:
+                selectedaffilist.append(value)
+            st.write("🦌 Affilated with: ")
+            for i in selectedaffilist:
+                st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+
+    data2 ={
+    "Recommended Paper": recpaperlist2,
+    "Cited by Count" : citedcount2
+    }
+    df = pd.DataFrame(data2)
+    fig = px.bar(df, x="Recommended Paper", y="Cited by Count", title="Cited by Count of Recommended Papers")
+    st.plotly_chart(fig)
 else:
     st.write("Please select a paper")
-
-#hello
