@@ -19,7 +19,10 @@ n_neighbors = 5
 def load_data(filename):
     return pd.read_csv(filename)
 
-data = load_data("outnow.csv")
+data = load_data("outnow.csv").drop(columns=["Unnamed: 0"])
+data2 = load_data("outnow_2.csv").drop(columns=["Unnamed: 0"])
+print(data.info())
+print(data2.info())
 
 # Load tfidf model
 with open('models/tfidf.model', 'rb') as file:
@@ -126,8 +129,9 @@ if selected_points:  # Check if any point is selected
         st.write(f"Keywords: {cleaned_kw}")
 
     # TF-IDF Vectorization
+    s_data2 = data2[data2[selected_subject] == 1]
     tfidf_vectorizer = TfidfVectorizer(stop_words='english')
-    X_tfidf = tfidf_vectorizer.fit_transform(s_data["title"])
+    X_tfidf = tfidf_vectorizer.fit_transform(s_data2["title"])
 
     # Calculate TF-IDF nearest neighbors
     tfidf_knn = NearestNeighbors(n_neighbors=n_neighbors + 1, algorithm='brute', metric='cosine')
@@ -145,10 +149,9 @@ if selected_points:  # Check if any point is selected
     for i, index in enumerate(filtered_indices_tfidf[:n_neighbors]):  # Limit to `n_neighbors`
         rec_paper = get_paper(index, s_data)
         with st.expander(f"Recommend #{i+1}: {rec_paper['title']}"):
-            cleaned_kw = rec_paper['keywords'].replace(";", ", ")
-            st.write(f"Keywords: {cleaned_kw}")
+            if rec_paper['keywords']:
+                cleaned_kw = rec_paper['keywords'].replace(";", ", ")
+                st.write(f"Keywords: {cleaned_kw}")
             st.write(f"Distance from selected paper: {filtered_distances_tfidf[i]:.4f}")
 else:
     st.write("Please select a paper")
-
-#hello
