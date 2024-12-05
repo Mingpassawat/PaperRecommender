@@ -73,27 +73,29 @@ def get_paper(index, df):
 st.write(f'Total sample: {subject_data.shape[0]}')
 
 # Selected point expander
-if selected_points:
+if selected_points:  # Check if any point is selected
+    # Get the selected paper
     selected_paper = get_paper(selected_points[0]['pointIndex'], s_data)
 
+    # Display selected paper information
     with st.expander(f"Selected paper title: {selected_paper['title']}"):
         cleaned_kw = selected_paper['keywords'].replace(";", ", ")
         st.write(f"Keywords: {cleaned_kw}")
 
+    # Calculate recommendations using nearest neighbors
     knn = NearestNeighbors(n_neighbors=n_neighbors, algorithm='brute')
-    knn.fit(features_scaled)
-    distances, indices = knn.kneighbors([features_scaled[0]])
-    print(distances, indices)
+    knn.fit(features_scaled)  # Fit the model on scaled features
 
-    i = 0
-    for index in indices[0]:
-        i += 1
+    # Find neighbors for the selected paper
+    selected_point_features = features_scaled[selected_points[0]['pointIndex']].reshape(1, -1)
+    distances, indices = knn.kneighbors(selected_point_features)
+
+    # Display recommended papers
+    for i, index in enumerate(indices[0]):
         rec_paper = get_paper(index, s_data)
-        with st.expander(f"Recommend #{i}: {rec_paper['title']}"):
+        with st.expander(f"Recommend #{i+1}: {rec_paper['title']}"):
             cleaned_kw = rec_paper['keywords'].replace(";", ", ")
             st.write(f"Keywords: {cleaned_kw}")
-            st.write(f'Distance from selected paper: {distances[0][i-1]}')
-
+            st.write(f"Distance from selected paper: {distances[0][i]}")
 else:
     st.write("Please select a paper")
-
