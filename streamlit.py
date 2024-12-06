@@ -59,13 +59,52 @@ st.markdown("""
 
 
 
+subject_codes_swapped = {
+    "Agricultural and Biological Sciences": "AGRI",
+    "Arts and Humanities": "ARTS",
+    "Biochemistry, Genetics and Molecular Biology": "BIOC",
+    "Business, Management and Accounting": "BUSI",
+    "Chemical Engineering": "CENG",
+    "Chemistry": "CHEM",
+    "Computer Science": "COMP",
+    "Decision Sciences": "DECI",
+    "Dentistry": "DENT",
+    "Earth and Planetary Sciences": "EART",
+    "Economics, Econometrics and Finance": "ECON",
+    "Energy": "ENER",
+    "Engineering": "ENGI",
+    "Environmental Science": "ENVI",
+    "Health Professions": "HEAL",
+    "Immunology and Microbiology": "IMMU",
+    "Materials Science": "MATE",
+    "Mathematics": "MATH",
+    "Medicine": "MEDI",
+    "Neuroscience": "NEUR",
+    "Nursing": "NURS",
+    "Pharmacology, Toxicology and Pharmaceutics": "PHAR",
+    "Physics and Astronomy": "PHYS",
+    "Psychology": "PSYC",
+    "Social Sciences": "SOCI",
+    "Veterinary": "VETE",
+    "Multidisciplinary": "MULT"
+}
+
+
+
 
 # Load dataset
 @st.cache_data
 def load_data(filename):
     return pd.read_csv(filename)
 
-data = load_data("outnow.csv").drop(columns=["Unnamed: 0"])
+
+ok = st.sidebar.checkbox("Decrease vector dimension")
+
+
+if ok:
+    data = load_data("outnow.csv").drop(columns=["Unnamed: 0"])
+else:
+    data = load_data("outnow_3.csv").drop(columns=["Unnamed: 0"])
 data2 = load_data("outnow_2.csv").drop(columns=["Unnamed: 0"])
 print(data.info())
 print(data2.info())
@@ -77,12 +116,12 @@ with open('models/tfidf.model', 'rb') as file:
     tfidf = pickle.load(file)
 
 # Columns and scaling
-subjects = data.columns[4:31]
+subjects = subject_codes_swapped.keys()
 scaler = StandardScaler()
 
 # Sidebar selection
 subject_list = subjects
-selected_subject = st.sidebar.selectbox("🎁 Select a subject:", subject_list)
+selected_subject = subject_codes_swapped[st.sidebar.selectbox("🎁 Select a subject:", subject_list)]
 
 # # Title
 # st.title("Paper Recommendation System")
@@ -96,7 +135,10 @@ st.header("Using KNN + Word2Vec")
 
 # Filter and transform data for PCA
 s_data = data[data[selected_subject] == 1]
-subject_data = data[data[selected_subject] == 1].drop(columns = 'title')
+if ok:
+    subject_data = data[data[selected_subject] == 1].drop(columns = ['title']) # Important
+else:
+    subject_data = data[data[selected_subject] == 1].drop(columns = ['title', 'title_keywords', 'token']) # Important
 titles = data[data[selected_subject] == 1]['title']
 numeric = subject_data.drop(columns=['keywords', 'affiliation_id', 'cited_by_count'])
 features_scaled = scaler.fit_transform(numeric)
@@ -136,7 +178,13 @@ def get_paper(index, df):
     return df.iloc[int(index)]
 
 # Placeholder for click-based interaction
+
 st.write(f'Total sample: {subject_data.shape[0]}')
+
+if ok:
+    st.write("Vector dimension: 5")
+else:
+    st.write("Vector dimension: 100")
 
 recpaperlist1 =[]
 citedcount1 = []
@@ -149,16 +197,22 @@ if selected_points:  # Check if any point is selected
 
     # Display selected paper information
     with st.expander(f"🎅 Selected paper title: {selected_paper['title']}"):
-        cleaned_kw = selected_paper['keywords'].replace(";", ", ")
-        st.write(f"🎄 Keywords: {cleaned_kw}")
+        try:
+            cleaned_kw = selected_paper['keywords'].replace(";", ", ")
+            st.write(f"🎄 Keywords: {cleaned_kw}")
+        except:
+            st.write("Keyword: No keywords")
         selectedaffilist = []
-        affi_id = selected_paper["affiliation_id"]
-        uninumberdf = affirelations[affirelations["id"] == affi_id]
-        for value in uninumberdf["affi"]:
-            selectedaffilist.append(value)
-        st.write("🦌 Affilated with: ")
-        for i in selectedaffilist:
-            st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+        try:
+            affi_id = selected_paper["affiliation_id"]
+            uninumberdf = affirelations[affirelations["id"] == affi_id]
+            for value in uninumberdf["affi"]:
+                selectedaffilist.append(value)
+            st.write("🦌 Affilated with: ")
+            for i in selectedaffilist:
+                st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+        except:
+            st.write("Affilated with: Not found")
 
 
     # Calculate recommendations using nearest neighbors
