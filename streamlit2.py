@@ -236,7 +236,10 @@ if selected_points:  # Check if any point is selected
         citedcount1.append(rec_paper['cited_by_count'])
         recpaperlist1.append("Recommend# "+ str(i+1))
         with st.expander(f"🎄 Recommend #{i+1}: {rec_paper['title']}"):
-            cleaned_kw = rec_paper['keywords'].replace(";", ", ")
+            try:
+                cleaned_kw = rec_paper['keywords'].replace(";", ", ")
+            except:
+                cleaned_kw = "Not Found"
             st.write(f"🎁 Keywords: {cleaned_kw}")
             st.write(f"⛄ Distance from selected paper: {filtered_distances[i]}")
             st.write(f"🎊 Cited by count: {int(rec_paper['cited_by_count'])}")
