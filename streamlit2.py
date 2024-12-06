@@ -210,7 +210,10 @@ if selected_points:  # Check if any point is selected
                 selectedaffilist.append(value)
             st.write("🦌 Affilated with: ")
             for i in selectedaffilist:
-                st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+                try:
+                    st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+                except:
+                    st.write("Affiliation: No data")
         except:
             st.write("Affilated with: Not found")
 
