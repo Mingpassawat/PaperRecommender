@@ -125,13 +125,20 @@ selected_subject = subject_codes_swapped[st.sidebar.selectbox("🎁 Select a sub
 
 # # Title
 # st.title("Paper Recommendation System")
+# Add search box to the sidebar
+search_query = st.sidebar.text_input("🔍 Search for papers by title:")
 
 # Title with Christmas Cheer
 st.markdown("<h1 class='main-title'>🎄 Paper Recommendation System 🎅</h1>", unsafe_allow_html=True)
 st.markdown("<h2 class='header'>Bringing you academic gifts this holiday season! 🎁</h2>", unsafe_allow_html=True)
 
 st.header("Using KNN + Word2Vec")
-
+# Filtered data based on search query
+if search_query:
+    filtered_data = data[data['title'].str.contains(search_query, case=False, na=False)]
+    st.write(f"Showing results for query: `{search_query}`")
+else:
+    filtered_data = data
 
 # Filter and transform data for PCA
 s_data = data[data[selected_subject] == 1]
@@ -144,6 +151,12 @@ numeric = subject_data.drop(columns=['keywords', 'affiliation_id', 'cited_by_cou
 features_scaled = scaler.fit_transform(numeric)
 pca = PCA(n_components=2)
 features_2d = pca.fit_transform(features_scaled)
+# Ensure there are samples to scale
+if numeric.shape[0] > 0:
+    features_scaled = scaler.fit_transform(numeric)
+else:
+    st.warning("No papers found matching your search criteria.")
+    features_scaled = np.array([])  # Ensure we don't proceed with empty data
 
 # Add PCA results to the dataset
 subject_data["PCA1"] = features_2d[:, 0]
