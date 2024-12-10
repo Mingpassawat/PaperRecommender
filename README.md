@@ -11,7 +11,7 @@ Here is a guide for this,
 
 	
 -  `/Fetching/main.py` :  Use for fetch extra 1000+ papers from Scopus search api.
-	- `Fetchnow.csv` is a csv result from fetching the data, which later will be concat with the main data.
+	- `Fetchnow.csv` is a csv result dummy coding the fetched data, which later will be concat with the main data.
 - `DATA_CSV/` contain all the provided data from CU into a sql-like schema csv.
 	- `data.csv` contain is the main table
 	- `affi_relation.csv, author_relation.csv` contain key
