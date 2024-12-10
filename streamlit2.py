@@ -140,7 +140,8 @@ if ok:
 else:
     subject_data = data[data[selected_subject] == 1].drop(columns = ['title', 'title_keywords', 'token']) # Important
 titles = data[data[selected_subject] == 1]['title']
-numeric = subject_data.drop(columns=['keywords', 'affiliation_id', 'cited_by_count'])
+numeric = subject_data.drop(columns=['keywords', 'affiliation_id', 'cited_by_count']).iloc[:,27:]
+print(numeric.info())
 features_scaled = scaler.fit_transform(numeric)
 pca = PCA(n_components=2)
 features_2d = pca.fit_transform(features_scaled)

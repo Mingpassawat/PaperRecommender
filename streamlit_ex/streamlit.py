@@ -100,6 +100,8 @@ def load_data(filename):
 
 ok = st.sidebar.checkbox("Decrease vector dimension")
 
+# Search box
+search_query = st.sidebar.text_input("🔍 Search for papers by title:")
 
 if ok:
     data = load_data("outnow.csv").drop(columns=["Unnamed: 0"])
@@ -125,38 +127,37 @@ selected_subject = subject_codes_swapped[st.sidebar.selectbox("🎁 Select a sub
 
 # # Title
 # st.title("Paper Recommendation System")
-# Add search box to the sidebar
-search_query = st.sidebar.text_input("🔍 Search for papers by title:")
 
 # Title with Christmas Cheer
 st.markdown("<h1 class='main-title'>🎄 Paper Recommendation System 🎅</h1>", unsafe_allow_html=True)
 st.markdown("<h2 class='header'>Bringing you academic gifts this holiday season! 🎁</h2>", unsafe_allow_html=True)
 
 st.header("Using KNN + Word2Vec")
-# Filtered data based on search query
-if search_query:
-    filtered_data = data[data['title'].str.contains(search_query, case=False, na=False)]
-    st.write(f"Showing results for query: `{search_query}`")
-else:
-    filtered_data = data
+
 
 # Filter and transform data for PCA
 s_data = data[data[selected_subject] == 1]
-if ok:
-    subject_data = data[data[selected_subject] == 1].drop(columns = ['title']) # Important
+
+
+if search_query:
+    subject_data = s_data[s_data['title'].str.contains(search_query, case=False, na=False)]
+    st.write(f"Filtered for search query: '{search_query}'. Remaining papers: {s_data.shape[0]}")
 else:
-    subject_data = data[data[selected_subject] == 1].drop(columns = ['title', 'title_keywords', 'token']) # Important
+    subject_data = s_data
+# Check if filtered data is empty
+if s_data.empty:
+    st.warning("No data available for the selected subject or filter. Please adjust your filters.")
+    st.stop()
+
+if ok:
+    subject_data = subject_data[subject_data[selected_subject] == 1].drop(columns = ['title']) # Important
+else:
+    subject_data = subject_data[subject_data[selected_subject] == 1].drop(columns = ['title', 'title_keywords', 'token']) # Important
 titles = data[data[selected_subject] == 1]['title']
 numeric = subject_data.drop(columns=['keywords', 'affiliation_id', 'cited_by_count'])
 features_scaled = scaler.fit_transform(numeric)
 pca = PCA(n_components=2)
 features_2d = pca.fit_transform(features_scaled)
-# Ensure there are samples to scale
-if numeric.shape[0] > 0:
-    features_scaled = scaler.fit_transform(numeric)
-else:
-    st.warning("No papers found matching your search criteria.")
-    features_scaled = np.array([])  # Ensure we don't proceed with empty data
 
 # Add PCA results to the dataset
 subject_data["PCA1"] = features_2d[:, 0]
@@ -206,7 +207,7 @@ citedcount1 = []
 if selected_points:  # Check if any point is selected
     # Get the selected paper
     selected_index = selected_points[0]['pointIndex']
-    selected_paper = get_paper(selected_index, s_data)
+    selected_paper = get_paper(selected_index, subject_data)
 
     # Display selected paper information
     with st.expander(f"🎅 Selected paper title: {selected_paper['title']}"):
@@ -223,7 +224,10 @@ if selected_points:  # Check if any point is selected
                 selectedaffilist.append(value)
             st.write("🦌 Affilated with: ")
             for i in selectedaffilist:
-                st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+                try:
+                    st.write(affils.iloc[i]["name"]+", "+affils.iloc[i]["country"]+", "+affils.iloc[i]["city"]+"\n")
+                except:
+                    st.write("Affiliation: No data")
         except:
             st.write("Affilated with: Not found")
 
